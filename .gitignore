@@ -1,0 +1,19 @@
+# Binaries and compiled files
+bin/
+*.exe
+*.test
+__debug_bin
+
+# Dependency directories
+vendor/
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
