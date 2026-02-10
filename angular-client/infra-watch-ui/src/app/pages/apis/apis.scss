@@ -1,0 +1,19 @@
+.container { padding: 20px; }
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 8px;
+}
+
+.api-card {
+  background: #222;
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
