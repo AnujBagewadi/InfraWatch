@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Monitored APIs</h2>
+
+  <div class="form">
+    <input [(ngModel)]="newApi.name" placeholder="API Name">
+    <input [(ngModel)]="newApi.url" placeholder="API URL">
+    <select [(ngModel)]="newApi.method">
+      <option>GET</option>
+      <option>POST</option>
+    </select>
+    <input [(ngModel)]="newApi.threshold" placeholder="Latency Threshold (ms)">
+    <button (click)="addApi()">Add API</button>
+  </div>
+
+  <div class="list">
+    <div class="api-card" *ngFor="let api of apis">
+      <a [routerLink]="['/apis', api.id]">
+        <h3>{{api.name}}</h3>
+        <p>{{api.url}}</p>
+      </a>
+    </div>
+  </div>
+</div>

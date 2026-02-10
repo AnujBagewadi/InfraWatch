@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>InfraWatch Dashboard</h2>
+
+  <div class="cards">
+    <div class="card">APIs: {{stats.totalApis}}</div>
+    <div class="card">Success %: {{stats.successRate}}</div>
+    <div class="card">Failure %: {{stats.failureRate}}</div>
+    <div class="card">Avg Response: {{stats.avgResponseTime}} ms</div>
+    <div class="card">Uptime: {{stats.uptime}}%</div>
+  </div>
+
+  <div class="chart">
+    <canvas baseChart
+      [data]="lineChartData"
+      chartType="line">
+    </canvas>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>API Logs</h2>
+
+  <div class="log" *ngFor="let log of logs">
+    <div>Status: {{log.statusCode}}</div>
+    <div>Response: {{log.responseTime}} ms</div>
+    <div>Time: {{log.timestamp}}</div>
+  </div>
+</div>
