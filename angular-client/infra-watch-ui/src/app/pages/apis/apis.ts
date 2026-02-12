@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { ApiModel } from '../../models/api.model';
 
 @Component({
   selector: 'app-apis',
@@ -12,9 +13,10 @@ import { ApiService } from '../../services/api.service';
 })
 export class Apis implements OnInit {
 
-  apis: any[] = [];
+  apis: ApiModel[] = [];
 
-  newApi = {
+  newApi: ApiModel = {
+    id: '',
     name: '',
     url: '',
     method: 'GET',
@@ -32,7 +34,7 @@ export class Apis implements OnInit {
 
   async addApi() {
     await ApiService.addApi(this.newApi);
-    this.newApi = { name: '', url: '', method: 'GET', threshold: 1000 };
+    this.newApi = { id: '',name: '', url: '', method: 'GET', threshold: 1000 };
     await this.loadApis();
   }
 }

@@ -1,1 +1,10 @@
-<p>alerts works!</p>
+<div class="container">
+  <h2>Alerts</h2>
+
+  <div class="alert" *ngFor="let alert of alerts">
+    <div><b>API:</b> {{alert.apiId}}</div>
+    <div><b>Message:</b> {{alert.message}}</div>
+    <div><b>Response Time:</b> {{alert.responseTime}} ms</div>
+    <div><b>Time:</b> {{alert.timestamp}}</div>
+  </div>
+</div>

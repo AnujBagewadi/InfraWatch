@@ -1,1 +1,22 @@
-<p>logs works!</p>
+<div class="container">
+  <h2>All API Logs</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>API ID</th>
+        <th>Status</th>
+        <th>Response Time (ms)</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs">
+        <td>{{log.apiId}}</td>
+        <td>{{log.statusCode}}</td>
+        <td>{{log.responseTime}}</td>
+        <td>{{log.timestamp}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
