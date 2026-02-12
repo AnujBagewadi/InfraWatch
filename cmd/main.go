@@ -8,6 +8,7 @@ import (
 	"github.com/AnujBagewadi/InfraWatch/internal/routes"
 	"github.com/AnujBagewadi/InfraWatch/internal/service"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 )
 
@@ -21,7 +22,11 @@ func main() {
 	app := fiber.New(fiber.Config{
 		AppName: "Real-Time Monitoring Dashboard v1",
 	})
-
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+		AllowMethods: "GET,POST,PUT,DELETE",
+		AllowHeaders: "*",
+	}))
 	routes.RegisterAPIRoutes(app)
 	routes.RegisterLogRoutes(app)
 	routes.RegisterDashboardRoutes(app)
